@@ -18,7 +18,7 @@ export class Triangle implements Figure {
     }
 
     if (b + c <= a || a + c <= b || a + b <= c) {
-      throw new Error('Incorrect format of triangle sides');
+      throw new Error('The provided sides do not form a valid triangle');
     }
   }
 
