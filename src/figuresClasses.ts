@@ -13,8 +13,12 @@ export class Triangle implements Figure {
     public b: number,
     public c: number,
   ) {
+    if (a <= 0 || b <= 0 || c <= 0) {
+      throw new Error('Sides of triangle must be positive numbers');
+    }
+
     if (b + c <= a || a + c <= b || a + b <= c) {
-      throw new Error('Incorrect triangle sides');
+      throw new Error('Incorrect format of triangle sides');
     }
   }
 
@@ -37,7 +41,7 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('Incorrect value of radius');
+      throw new Error('Radius must be positive number');
     }
   }
 
@@ -55,7 +59,7 @@ export class Rectangle implements Figure {
     public height: number,
   ) {
     if (width <= 0 || height <= 0) {
-      throw new Error('Incorrect value of sides');
+      throw new Error('Width and height must be positive numbers');
     }
   }
 
